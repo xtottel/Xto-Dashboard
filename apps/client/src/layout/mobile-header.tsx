@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const userName = "Collins Joe";
-const smsUnits = 420;
+const smsUnits = 6420;
 
 export function MobileHeader() {
   return (

@@ -164,7 +164,7 @@ export default function DashboardHome() {
             <Wallet className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">GH₵ 17,245.00</div>
+            <div className="text-2xl font-bold">GH₵ 42,869.00</div>
             <p className="text-xs text-muted-foreground">
               +12% from last month
             </p>
@@ -178,7 +178,7 @@ export default function DashboardHome() {
             <BadgeCent className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">GH₵ 924.00</div>
+            <div className="text-2xl font-bold">GH₵ 8,742.00</div>
             <p className="text-xs text-muted-foreground">1,200 this month</p>
           </CardContent>
         </Card>
@@ -202,7 +202,7 @@ export default function DashboardHome() {
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">45</div>
+            <div className="text-2xl font-bold">2806</div>
             <p className="text-xs text-muted-foreground">
               People who paid you this month
             </p>
