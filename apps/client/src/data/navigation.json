@@ -1,0 +1,44 @@
+{
+  "navMain": [
+    {
+      "title": "Dashboard",
+      "url": "/home"
+    },
+    {
+      "title": "Payments",
+      "url": "/home/payments"
+    },
+    {
+      "title": "Invoicing",
+      "url": "/home/invoicing"
+    },
+    {
+      "title": "PayLink",
+      "url": "/home/paylink",
+      "items": [
+        { "title": "My Links", "url": "/home/paylink/links" },
+        { "title": "Payment Pages", "url": "/home/paylink/pages" }
+      ]
+    },
+    {
+      "title": "Customers",
+      "url": "/home/customers"
+    },
+     {
+      "title": "SMS",
+      "url": "/home/sms",
+      "items": [
+        { "title": "Send Message", "url": "/home/sms/send" },
+        { "title": "Message History", "url": "/home/sms/history" }
+      ]
+    },
+    {
+      "title": "Payouts",
+      "url": "/home/payouts",
+      "items": [
+        { "title": "Payout History", "url": "/home/payouts/history" },
+        { "title": "Payout Accounts", "url": "/home/payouts/accounts" }
+      ]
+    }
+  ]
+}

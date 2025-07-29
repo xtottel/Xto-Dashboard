@@ -1,0 +1,43 @@
+{
+  "navItems": [
+    { "icon": "GridIcon", "name": "Dashboard", "path": "/" },
+    { "icon": "CreditCard", "name": "Payments", "path": "/payments" },
+    { "icon": "ReceiptCent", "name": "Invoicing", "path": "/invoicing" },
+    {
+      "icon": "Link",
+      "name": "PayLink",
+      "subItems": [
+        { "name": "My Links", "path": "/paylink" },
+        { "name": "Payment Pages", "path": "/paylink/pages" }
+      ]
+    },
+    { "icon": "Users", "name": "Customers", "path": "/customers" },
+   
+    {
+      "icon": "Wallet",
+      "name": "Payouts",
+      "subItems": [
+        { "name": "Initiate Payout", "path": "/payouts/initiate" },
+        { "name": "Payout History", "path": "/payouts/history" },
+        { "name": "Payout Accounts", "path": "/payouts/accounts" }
+      ]
+    },
+    {
+      "icon": "SendHorizonal",
+      "name": "Transfers",
+      "subItems": [
+        { "name": "Send Money", "path": "/money/send" },
+        { "name": "Transaction History", "path": "/money/history" }
+      ]
+    },
+    {
+      "icon": "PieChart",
+      "name": "Reports",
+      "path": "/reports"
+    }
+  ],
+  "othersItems": [
+    { "icon": "Settings", "name": "Business Settings", "path": "/manage-business" },
+    { "icon": "HelpCircle", "name": "Get Help", "path": "/help" }
+  ]
+}
