@@ -34,6 +34,8 @@ import {
   Legend,
 } from "recharts";
 
+import { ActivityChart } from "./components/ActivityChart";
+
 // Updated data for payment gateway
 const paymentData = [
   { name: "Jan", transactions: 4000, successful: 3800 },
@@ -209,6 +211,8 @@ export default function DashboardHome() {
           </CardContent>
         </Card>
       </div>
+
+      <ActivityChart />
 
       {/* Charts Section */}
       <div className="grid gap-4 md:grid-cols-2">
