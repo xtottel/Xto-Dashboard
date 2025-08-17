@@ -26,7 +26,7 @@ export function DesktopHeader() {
 
   // Static sample data (replace with real values from context or props)
   const userName = "Collins Joe";
-  const smsUnits = 6420;
+
 
   return (
     <header className="sticky top-0 z-40 hidden h-16 w-full items-center justify-between border-b bg-background/95 px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:flex">
@@ -38,9 +38,9 @@ export function DesktopHeader() {
       {/* Right: Actions */}
       <div className="flex items-center gap-6">
         {/* SMS Units */}
-        <div className="text-sm font-medium text-muted-foreground">
+        {/* <div className="text-sm font-medium text-muted-foreground">
           <span className="text-primary font-semibold">{smsUnits}</span> SMS Units
-        </div>
+        </div> */}
 
         {/* Quick Create Dropdown */}
         <DropdownMenu>

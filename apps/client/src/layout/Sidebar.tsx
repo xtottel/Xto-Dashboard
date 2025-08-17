@@ -14,6 +14,9 @@ import {
   Wallet,
   SendHorizonal,
   Users,
+  FileChartPie,
+  Store,
+  Banknote,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -47,12 +50,14 @@ const sectionIcons = {
   Payments: CreditCard,
   Invoicing: ReceiptCent,
   PayLink: Link2,
+  Wallet: Wallet,
   Customers: Users,
-  SMS: MessageSquareText,
-  Payouts: Wallet,
+  "Store Front": Store,
+  Money: Banknote,          // ✅ grouped (Payouts + Money)
   Transfers: SendHorizonal,
-  Reports: PieChart,
+  Reports: FileChartPie,
 } as const;
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();

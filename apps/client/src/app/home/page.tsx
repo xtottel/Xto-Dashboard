@@ -35,6 +35,7 @@ import {
 } from "recharts";
 
 import { ActivityChart } from "./components/ActivityChart";
+import Link from "next/link";
 
 // Updated data for payment gateway
 const paymentData = [
@@ -212,7 +213,7 @@ export default function DashboardHome() {
         </Card>
       </div>
 
-      <ActivityChart />
+     
 
       {/* Charts Section */}
       <div className="grid gap-4 md:grid-cols-2">
@@ -279,6 +280,8 @@ export default function DashboardHome() {
         </Card>
       </div>
 
+ <ActivityChart />
+
       {/* Recent Transactions */}
       <div>
         <h1 className="text-2xl font-bold tracking-tight">
@@ -320,9 +323,9 @@ export default function DashboardHome() {
             Showing <strong>1-{transactions.length}</strong> of{" "}
             <strong>{transactions.length}</strong>
           </div>
-          <div className="space-x-2">
+            <div className="space-x-2">
             <Button variant="outline" size="sm">
-              View All
+              <Link href={`/home/payments/`}>View All</Link>
             </Button>
           </div>
         </CardFooter>

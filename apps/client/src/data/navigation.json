@@ -6,7 +6,11 @@
     },
     {
       "title": "Payments",
-      "url": "/home/payments"
+      "url": "/home/payments",
+      "items": [
+        { "title": "Transactions", "url": "/home/payments" },
+        { "title": "Refunds", "url": "/home/payments/refunds" }
+      ]
     },
     {
       "title": "Invoicing",
@@ -14,30 +18,34 @@
     },
     {
       "title": "PayLink",
-      "url": "/home/paylink",
+      "url": "/home/paylink"
+    },
+    {
+      "title": "Store Front",
+      "url": "/home/products",
       "items": [
-        { "title": "My Links", "url": "/home/paylink/links" },
-        { "title": "Payment Pages", "url": "/home/paylink/pages" }
+        { "title": "Add Product", "url": "/home/products/add" },
+        { "title": "Product List", "url": "/home/products/list" }
       ]
     },
     {
       "title": "Customers",
       "url": "/home/customers"
     },
-     {
-      "title": "SMS",
-      "url": "/home/sms",
+    {
+      "title": "Wallet",
+      "url": "/home/wallet",
       "items": [
-        { "title": "Send Message", "url": "/home/sms/send" },
-        { "title": "Message History", "url": "/home/sms/history" }
+        { "title": "Initiate Payout", "url": "/home/wallet/initiate" },
+        { "title": "Payout Accounts", "url": "/home/wallet/accounts" },
+        { "title": "Payout History", "url": "/home/wallet/payout-history" }
       ]
     },
     {
-      "title": "Payouts",
-      "url": "/home/payouts",
+      "title": "Reports",
+      "url": "/home/reports",
       "items": [
-        { "title": "Payout History", "url": "/home/payouts/history" },
-        { "title": "Payout Accounts", "url": "/home/payouts/accounts" }
+        { "title": "Cashflow Statement", "url": "/home/reports/statements" }
       ]
     }
   ]

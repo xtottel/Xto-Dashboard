@@ -6,6 +6,7 @@ import { AppSidebar } from "@/layout/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { DesktopHeader } from "@/layout/desktop-header";
 import { MobileHeader } from "@/layout/mobile-header";
+import Footer from "@/layout/Footer";
 
 export default function DashboardLayout({
   children,
@@ -37,7 +38,7 @@ export default function DashboardLayout({
               {children}
             </div>
           </main>
-         
+         <Footer />
         </div>
       </div>
     </SidebarProvider>

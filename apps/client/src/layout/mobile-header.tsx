@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const userName = "Collins Joe";
-const smsUnits = 6420;
+// const smsUnits = 6420;
 
 export function MobileHeader() {
   return (
@@ -58,10 +58,10 @@ export function MobileHeader() {
               <ReceiptCent className="mr-2 size-4" />
               Create Invoice
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
               <MessageSquareText className="mr-2 size-4" />
               Send SMS
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuItem>
               <Send className="mr-2 size-4" />
               New Payout
@@ -88,9 +88,9 @@ export function MobileHeader() {
               <p className="text-sm font-semibold text-foreground">
                 {userName}
               </p>
-              <p className="text-xs text-muted-foreground">
+              {/* <p className="text-xs text-muted-foreground">
                 {smsUnits.toLocaleString()} SMS Units
-              </p>
+              </p> */}
             </div>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
