@@ -5,7 +5,6 @@ import {
   ChevronDown,
   ChevronRight,
   CreditCard,
-  MessageSquareText,
   FileText,
   PieChart,
   Cog,
@@ -53,7 +52,7 @@ const sectionIcons = {
   Wallet: Wallet,
   Customers: Users,
   "Store Front": Store,
-  Money: Banknote,          // ✅ grouped (Payouts + Money)
+  Money: Banknote,         
   Transfers: SendHorizonal,
   Reports: FileChartPie,
 } as const;

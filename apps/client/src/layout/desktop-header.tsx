@@ -14,9 +14,8 @@ import {
 import {
   Plus,
   ReceiptCent,
-  MessageSquareText,
   Send,
-  Wallet,
+  Link as Link2,
 } from "lucide-react";
 
 import { useRouter } from "next/navigation";
@@ -37,10 +36,7 @@ export function DesktopHeader() {
 
       {/* Right: Actions */}
       <div className="flex items-center gap-6">
-        {/* SMS Units */}
-        {/* <div className="text-sm font-medium text-muted-foreground">
-          <span className="text-primary font-semibold">{smsUnits}</span> SMS Units
-        </div> */}
+   
 
         {/* Quick Create Dropdown */}
         <DropdownMenu>
@@ -57,17 +53,13 @@ export function DesktopHeader() {
               <ReceiptCent className="w-4 h-4 mr-2" />
               Create Invoice
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push("/home/sms/send")}>
-              <MessageSquareText className="w-4 h-4 mr-2" />
-              Send Message
+            <DropdownMenuItem onClick={() => router.push("/home/paylink")}>
+              <Link2 className="w-4 h-4 mr-2" />
+              Create PayLink
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => router.push("/home/payouts/initiate")}>
               <Send className="w-4 h-4 mr-2" />
               Request Payout
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push("/home/sms/topup")}>
-              <Wallet className="w-4 h-4 mr-2" />
-              Top Up SMS Units
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

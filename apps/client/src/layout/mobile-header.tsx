@@ -19,14 +19,15 @@ import {
   Plus,
   ReceiptCent,
   Send,
-  Wallet,
-  MessageSquareText,
+  Link as Link2,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const userName = "Collins Joe";
 // const smsUnits = 6420;
 
 export function MobileHeader() {
+  const router = useRouter();
   return (
     <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
       {/* Left: Sidebar trigger + logo */}
@@ -54,21 +55,22 @@ export function MobileHeader() {
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuLabel>Quick Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+
+            <DropdownMenuItem
+              onClick={() => router.push("/home/invoicing/create")}
+            >
               <ReceiptCent className="mr-2 size-4" />
               Create Invoice
             </DropdownMenuItem>
-            {/* <DropdownMenuItem>
-              <MessageSquareText className="mr-2 size-4" />
-              Send SMS
-            </DropdownMenuItem> */}
-            <DropdownMenuItem>
-              <Send className="mr-2 size-4" />
-              New Payout
+            <DropdownMenuItem onClick={() => router.push("/home/paylink")}>
+              <Link2 className="mr-2 size-4" />
+              Create PayLink
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Wallet className="mr-2 size-4" />
-              Top-Up SMS Units
+            <DropdownMenuItem
+              onClick={() => router.push("/home/payouts/initiate")}
+            >
+              <Send className="mr-2 size-4" />
+              Request Payout
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

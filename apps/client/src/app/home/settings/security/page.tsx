@@ -5,7 +5,7 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+
 
 export default function SecuritySettingsPage() {
   return (
@@ -47,22 +47,6 @@ export default function SecuritySettingsPage() {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Two-Factor Authentication</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center justify-between">
-            <div>
-              <h4 className="font-medium">SMS Authentication</h4>
-              <p className="text-sm text-muted-foreground">
-                Receive verification codes via SMS
-              </p>
-            </div>
-            <Switch />
-          </div>
-        </CardContent>
-      </Card>
 
       <Card>
         <CardHeader>

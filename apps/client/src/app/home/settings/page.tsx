@@ -5,10 +5,9 @@ import {
   Building, 
   Key, 
   Shield, 
-  Bell, 
-  Users, 
-  CreditCard, 
-  SlidersHorizontal 
+  Users,
+  Wallet, 
+
 } from "lucide-react";
 import Link from "next/link";
 
@@ -26,24 +25,27 @@ export default function SettingsPage() {
       icon: <Building className="h-5 w-5" />,
       href: "/home/settings/business",
     },
+    //
+    // Settlement Accounts
     {
-      title: "Preferences",
-      description: "Set your theme, notifications and language preferences",
-      icon: <SlidersHorizontal className="h-5 w-5" />,
-      href: "/home/settings/preferences",
+      title: "Settlement Accounts",
+      description: "Setup or bank or mobile money accounts to receive all your payments",
+      icon: <Wallet className="h-5 w-5" />,
+      href: "/home/payouts/accounts",
     },
+
     {
       title: "Security",
       description: "Configure authentication and security settings",
       icon: <Shield className="h-5 w-5" />,
       href: "/home/settings/security",
     },
-    {
-      title: "Compliance",
-      description: "Configure compliance and verification settings",
-      icon: <Shield className="h-5 w-5" />,
-      href: "/home/settings/compliance",
-    },
+    // {
+    //   title: "Compliance",
+    //   description: "Configure compliance and verification settings",
+    //   icon: <Shield className="h-5 w-5" />,
+    //   href: "/home/settings/compliance",
+    // },
     {
       title: "API Keys & Webhooks",
       description: "Manage your API access credentials",
@@ -55,12 +57,6 @@ export default function SettingsPage() {
       description: "Manage team members and roles",
       icon: <Users className="h-5 w-5" />,
       href: "/home/settings/team",
-    },
-    {
-      title: "Billing",
-      description: "View and manage your billing information",
-      icon: <CreditCard className="h-5 w-5" />,
-      href: "/home/settings/billing",
     },
   ];
 

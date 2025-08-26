@@ -9,7 +9,8 @@
       "url": "/home/payments",
       "items": [
         { "title": "Transactions", "url": "/home/payments" },
-        { "title": "Refunds", "url": "/home/payments/refunds" }
+        { "title": "Refunds", "url": "/home/payments/refunds" },
+        { "title": "Payouts", "url": "/home/payments/payouts" }
       ]
     },
     {
@@ -21,31 +22,16 @@
       "url": "/home/paylink"
     },
     {
-      "title": "Store Front",
-      "url": "/home/products",
-      "items": [
-        { "title": "Add Product", "url": "/home/products/add" },
-        { "title": "Product List", "url": "/home/products/list" }
-      ]
-    },
-    {
       "title": "Customers",
       "url": "/home/customers"
-    },
-    {
-      "title": "Wallet",
-      "url": "/home/wallet",
-      "items": [
-        { "title": "Initiate Payout", "url": "/home/wallet/initiate" },
-        { "title": "Payout Accounts", "url": "/home/wallet/accounts" },
-        { "title": "Payout History", "url": "/home/wallet/payout-history" }
-      ]
     },
     {
       "title": "Reports",
       "url": "/home/reports",
       "items": [
-        { "title": "Cashflow Statement", "url": "/home/reports/statements" }
+        { "title": "Audit Logs", "url": "/home/reports/audit" },
+        { "title": "Sales Reports", "url": "/home/reports/sales" },
+        { "title": "Settlement Reports", "url": "/home/reports/settlements" }
       ]
     }
   ]

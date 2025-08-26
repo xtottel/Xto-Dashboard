@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ChevronLeft, Upload, Image, Globe,  Building2, Landmark } from "lucide-react";
+import { ChevronLeft, Upload, Image as Image2, Globe,  Building2, Landmark } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -90,7 +90,7 @@ export default function BusinessProfilePage() {
                     onClick={triggerFileInput}
                     className="absolute -bottom-2 -right-2 bg-primary rounded-full p-2 shadow-sm hover:bg-primary/90 transition-colors group-hover:opacity-100 opacity-0"
                   >
-                    <Image className="h-4 w-4 text-white" />
+                    <Image2 className="h-4 w-4 text-white" />
                   </button>
                   <input
                     type="file"
@@ -227,35 +227,6 @@ export default function BusinessProfilePage() {
                 <div className="space-y-2">
                   <Label htmlFor="vatNumber">VAT Number</Label>
                   <Input id="vatNumber" defaultValue="VAT123456789" />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Social Media & Additional Info */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Social Media</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="facebook">Facebook</Label>
-                  <Input id="facebook" placeholder="https://facebook.com/yourpage" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="twitter">Twitter</Label>
-                  <Input id="twitter" placeholder="https://twitter.com/yourhandle" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="linkedin">LinkedIn</Label>
-                  <Input id="linkedin" placeholder="https://linkedin.com/company/yourcompany" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="instagram">Instagram</Label>
-                  <Input id="instagram" placeholder="https://instagram.com/yourhandle" />
                 </div>
               </div>
             </CardContent>

@@ -1,43 +1,54 @@
 {
-  "navItems": [
-    { "icon": "GridIcon", "name": "Dashboard", "path": "/" },
-    { "icon": "CreditCard", "name": "Payments", "path": "/payments" },
-    { "icon": "ReceiptCent", "name": "Invoicing", "path": "/invoicing" },
+  "navMain": [
     {
-      "icon": "Link",
-      "name": "PayLink",
-      "subItems": [
-        { "name": "My Links", "path": "/paylink" },
-        { "name": "Payment Pages", "path": "/paylink/pages" }
-      ]
+      "title": "Dashboard",
+      "url": "/home"
     },
-    { "icon": "Users", "name": "Customers", "path": "/customers" },
-   
     {
-      "icon": "Wallet",
-      "name": "Payouts",
-      "subItems": [
-        { "name": "Initiate Payout", "path": "/payouts/initiate" },
-        { "name": "Payout History", "path": "/payouts/history" },
-        { "name": "Payout Accounts", "path": "/payouts/accounts" }
+      "title": "Payments",
+      "url": "/home/payments",
+      "items": [
+        { "title": "Transactions", "url": "/home/payments" },
+        { "title": "Refunds", "url": "/home/payments/refunds" }
       ]
     },
     {
-      "icon": "SendHorizonal",
-      "name": "Transfers",
-      "subItems": [
-        { "name": "Send Money", "path": "/money/send" },
-        { "name": "Transaction History", "path": "/money/history" }
+      "title": "Invoicing",
+      "url": "/home/invoicing"
+    },
+    {
+      "title": "PayLink",
+      "url": "/home/paylink"
+    },
+    {
+      "title": "Store Front",
+      "url": "/home/products",
+      "items": [
+        { "title": "Add Product", "url": "/home/products/add" },
+        { "title": "Product List", "url": "/home/products/list" }
       ]
     },
     {
-      "icon": "PieChart",
-      "name": "Reports",
-      "path": "/reports"
+      "title": "Customers",
+      "url": "/home/customers"
+    },
+    {
+      "title": "Money",
+      "url": "/home/money",
+      "items": [
+        { "title": "Payout History", "url": "/home/wallet/payout-history" },
+        { "title": "Settlement Statement", "url": "/home/settings/business" },
+        { "title": "Team Members", "url": "/home/settings/team" },
+        { "title": "Billing & Plans", "url": "/home/settings/billing" },
+        { "title": "Security", "url": "/home/settings/security" }
+      ]
+    },
+    {
+      "title": "Reports",
+      "url": "/home/reports",
+      "items": [
+        { "title": "Cashflow Statement", "url": "/home/reports/statements" }
+      ]
     }
-  ],
-  "othersItems": [
-    { "icon": "Settings", "name": "Business Settings", "path": "/manage-business" },
-    { "icon": "HelpCircle", "name": "Get Help", "path": "/help" }
   ]
 }
