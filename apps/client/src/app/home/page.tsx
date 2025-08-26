@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCent,  Wallet, Users, RotateCcw } from "lucide-react";
+import { BadgeCent, Wallet, Users, RotateCcw } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -112,7 +112,6 @@ const transactions: Transaction[] = [
 
 const COLORS = ["#facc15", "#3b82f6"]; // Yellow for MoMo, Blue for Card
 
-
 export default function DashboardHome() {
   const [currentDateTime, setCurrentDateTime] = useState<string>("");
 
@@ -157,69 +156,68 @@ export default function DashboardHome() {
         Your snapshot for today, {currentDateTime || "loading..."}
       </div>
 
+      {/* Stats Grid */}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <Card className="bg-amber-100 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Available Balance
+            </CardTitle>
+            <Wallet className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">GH₵ 42,869.00</div>
+            <p className="text-xs text-muted-foreground">
+              +12% from last month
+            </p>
+          </CardContent>
+        </Card>
 
+        {/* Changed to Green */}
+        <Card className="bg-emerald-100 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Today&apos;s Payments
+            </CardTitle>
+            <BadgeCent className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">GH₵ 8,742.00</div>
+            <p className="text-xs text-muted-foreground">1,200 this month</p>
+          </CardContent>
+        </Card>
 
-     {/* Stats Grid */}
-<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-  <Card className="bg-amber-100 hover:shadow-md transition-shadow">
-    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-      <CardTitle className="text-sm font-medium">
-        Available Balance
-      </CardTitle>
-      <Wallet className="h-4 w-4 text-muted-foreground" />
-    </CardHeader>
-    <CardContent>
-      <div className="text-2xl font-bold">GH₵ 42,869.00</div>
-      <p className="text-xs text-muted-foreground">
-        +12% from last month
-      </p>
-    </CardContent>
-  </Card>
+        {/* Changed Success Rate → Refunds and Blue */}
+        <Card className="bg-sky-100 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Refunds Processed Today
+            </CardTitle>
+            <RotateCcw className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">GH₵ 1,230.00</div>
+            <p className="text-xs text-muted-foreground">
+              12 refund requests approved today
+            </p>
+          </CardContent>
+        </Card>
 
-  {/* Changed to Green */}
-  <Card className="bg-emerald-100 hover:shadow-md transition-shadow">
-    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-      <CardTitle className="text-sm font-medium">
-        Today&apos;s Payments
-      </CardTitle>
-      <BadgeCent className="h-4 w-4 text-muted-foreground" />
-    </CardHeader>
-    <CardContent>
-      <div className="text-2xl font-bold">GH₵ 8,742.00</div>
-      <p className="text-xs text-muted-foreground">1,200 this month</p>
-    </CardContent>
-  </Card>
-
-  {/* Changed Success Rate → Refunds and Blue */}
-  <Card className="bg-sky-100 hover:shadow-md transition-shadow">
-    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-      <CardTitle className="text-sm font-medium">Refunds Processed Today</CardTitle>
-      <RotateCcw className="h-4 w-4 text-muted-foreground" />
-    </CardHeader>
-    <CardContent>
-      <div className="text-2xl font-bold">GH₵ 1,230.00</div>
-      <p className="text-xs text-muted-foreground">
-        12 refund requests approved today
-      </p>
-    </CardContent>
-  </Card>
-
-  <Card className="bg-purple-100 hover:shadow-md transition-shadow">
-    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-      <CardTitle className="text-sm font-medium">
-        Unique Customers
-      </CardTitle>
-      <Users className="h-4 w-4 text-muted-foreground" />
-    </CardHeader>
-    <CardContent>
-      <div className="text-2xl font-bold">2806</div>
-      <p className="text-xs text-muted-foreground">
-        People who paid you this month
-      </p>
-    </CardContent>
-  </Card>
-</div>
-
+        <Card className="bg-purple-100 hover:shadow-md transition-shadow">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Unique Customers
+            </CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">2806</div>
+            <p className="text-xs text-muted-foreground">
+              People who paid you this month
+            </p>
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Charts Section */}
       <div className="grid gap-4 md:grid-cols-2">
@@ -251,7 +249,8 @@ export default function DashboardHome() {
             </ResponsiveContainer>
           </CardContent>
         </Card>
-{/* 
+
+
         <Card className="h-[350px]">
           <CardHeader>
             <CardTitle>Payment Channels</CardTitle>
@@ -270,6 +269,7 @@ export default function DashboardHome() {
                   outerRadius={80}
                   paddingAngle={5}
                   dataKey="value"
+                  label
                 >
                   {channelData.map((_entry, index) => (
                     <Cell
@@ -283,39 +283,10 @@ export default function DashboardHome() {
               </PieChart>
             </ResponsiveContainer>
           </CardContent>
-        </Card> */}
-
-        <Card className="h-[350px]">
-      <CardHeader>
-        <CardTitle>Payment Channels</CardTitle>
-        <CardDescription>Transaction distribution by channel</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-col items-center justify-center">
-        <ResponsiveContainer width="100%" height={230}>
-          <PieChart>
-            <Pie
-              data={channelData}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              paddingAngle={5}
-              dataKey="value"
-              label
-            >
-              {channelData.map((_entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend />
-          </PieChart>
-        </ResponsiveContainer>
-      </CardContent>
-    </Card>
+        </Card>
       </div>
 
- <ActivityChart />
+      <ActivityChart />
 
       {/* Recent Transactions */}
       <div>
@@ -358,7 +329,7 @@ export default function DashboardHome() {
             Showing <strong>1-{transactions.length}</strong> of{" "}
             <strong>{transactions.length}</strong>
           </div>
-            <div className="space-x-2">
+          <div className="space-x-2">
             <Button variant="outline" size="sm">
               <Link href={`/home/payments/`}>View All</Link>
             </Button>

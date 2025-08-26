@@ -13,7 +13,7 @@ export function PaymentLinkStats() {
     },
     {
       title: "Total Revenue",
-      value: "$32,845",
+      value: "GH₵ 32,845",
       description: "+22% from last month",
       icon: DollarSign,
       color: "bg-green-100 text-green-700",
@@ -27,7 +27,7 @@ export function PaymentLinkStats() {
     },
     {
       title: "Pending Payments",
-      value: "128",
+      value: "128", 
       description: "+5 from yesterday",
       icon: Clock,
       color: "bg-yellow-100 text-yellow-700",
