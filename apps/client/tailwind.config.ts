@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { error } from "console";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +20,50 @@ export default {
       colors: {
         background: "#f9fafb",
         foreground: "#111827",
+        // brand: {
+        //   25: "#f2f7ff",
+        //   50: "#ecf3ff",
+        //   100: "#dde9ff",
+        //   200: "#c2d6ff",
+        //   300: "#9cb9ff",
+        //   400: "#7592ff",
+        //   500: "#465fff",
+        //   600: "#3641f5",
+        //   700: "#2a31d8",
+        //   800: "#252dae",
+        //   900: "#262e89",
+        //   950: "#4d3c7a",
+        // },
+        brand: {
+          25: "#f7f5fa", // very light tint
+          50: "#eeeaf5",
+          100: "#ddd4eb",
+          200: "#c2b2db",
+          300: "#a48fcb",
+          400: "#856ab8",
+          500: "#684fa0", // base
+          600: "#584188",
+          700: "#4f387d",
+          800: "#473272",
+          900: "#423068",
+          950: "#4d3c7a", // brand color (anchor)
+        },
+
+        error: {
+          25: "#fffbfa",
+          50: "#fef3f2",
+          100: "#fee4e2",
+          200: "#fecdca",
+          300: "#fda29b",
+          400: "#f97066",
+          500: "#f04438",
+          600: "#d92d20",
+          700: "#b42318",
+          800: "#912018",
+          900: "#7a271a",
+          950: "#55160c",
+        },
+
         card: {
           DEFAULT: "#ffffff",
           foreground: "#1f2937",

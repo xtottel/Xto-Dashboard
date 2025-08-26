@@ -157,7 +157,6 @@ export default function DashboardHome() {
           <Button
             variant="default"
             className="flex items-center gap-2"
-            // onClick={() => (window.location.href = "/home/invoicing/new")}
             onClick={() => router.push("/home/invoicing/new")}
           >
             <Plus className="mr-2 h-4 w-4" />
