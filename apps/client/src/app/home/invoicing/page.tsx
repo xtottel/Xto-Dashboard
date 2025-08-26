@@ -32,6 +32,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 type Invoices = {
   customer: string;
@@ -86,6 +87,7 @@ const invoices: Invoices[] = [
 ];
 
 export default function DashboardHome() {
+  const router = useRouter();
   const getStatusBadge = (status: Invoices["status"]) => {
     return (
       <Badge variant="status" status={status}>
@@ -152,7 +154,12 @@ export default function DashboardHome() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="default" className="flex items-center">
+          <Button
+            variant="default"
+            className="flex items-center gap-2"
+            // onClick={() => (window.location.href = "/home/invoicing/new")}
+            onClick={() => router.push("/home/invoicing/new")}
+          >
             <Plus className="mr-2 h-4 w-4" />
             Create Invoice
           </Button>
@@ -169,7 +176,7 @@ export default function DashboardHome() {
                 <TableHead>Amount</TableHead>
                 <TableHead> Type</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead>Actions</TableHead>              
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -185,7 +192,11 @@ export default function DashboardHome() {
                   <TableCell>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="icon" className="h-8 w-8">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-8 w-8"
+                        >
                           <Ellipsis className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>

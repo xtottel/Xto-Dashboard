@@ -57,7 +57,7 @@ export function MobileHeader() {
             <DropdownMenuSeparator />
 
             <DropdownMenuItem
-              onClick={() => router.push("/home/invoicing/create")}
+              onClick={() => router.push("/home/invoicing/new")}
             >
               <ReceiptCent className="mr-2 size-4" />
               Create Invoice

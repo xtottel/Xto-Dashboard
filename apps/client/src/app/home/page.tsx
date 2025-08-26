@@ -166,7 +166,7 @@ export default function DashboardHome() {
             <Wallet className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">GH₵ 42,869.00</div>
+            <div className="text-2xl font-bold">GH₵ 742,869.00</div>
             <p className="text-xs text-muted-foreground">
               +12% from last month
             </p>
@@ -196,7 +196,7 @@ export default function DashboardHome() {
             <RotateCcw className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">GH₵ 1,230.00</div>
+            <div className="text-2xl font-bold">GH₵ 30.00</div>
             <p className="text-xs text-muted-foreground">
               12 refund requests approved today
             </p>
@@ -211,7 +211,7 @@ export default function DashboardHome() {
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">2806</div>
+            <div className="text-2xl font-bold">1,2806</div>
             <p className="text-xs text-muted-foreground">
               People who paid you this month
             </p>
