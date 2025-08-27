@@ -86,3 +86,109 @@ export default function SettingsPage() {
     </div>
   );
 }
+
+
+// import { Card } from "@/components/ui/card";
+// import { User, Building, Key, Shield, Users, Wallet } from "lucide-react";
+// import Link from "next/link";
+
+// export default function SettingsPage() {
+//   const settingsGroups = [
+//     {
+//       title: "Account",
+//       items: [
+//         {
+//           title: "Profile",
+//           description: "Manage your personal information",
+//           icon: <User className="h-5 w-5" />,
+//           href: "/home/settings/profile",
+//         },
+//         {
+//           title: "Business Profile",
+//           description: "Update your company details and compliance information",
+//           icon: <Building className="h-5 w-5" />,
+//           href: "/home/settings/business",
+//         },
+//       ],
+//     },
+//     {
+//       title: "Payments",
+//       items: [
+//         {
+//           title: "Settlement Accounts",
+//           description:
+//             "Setup bank or mobile money accounts to receive all your payments",
+//           icon: <Wallet className="h-5 w-5" />,
+//           href: "/home/settings/payout/accounts",
+//         },
+//       ],
+//     },
+//     {
+//       title: "Security & Access",
+//       items: [
+//         {
+//           title: "Security",
+//           description: "Configure authentication and security settings",
+//           icon: <Shield className="h-5 w-5" />,
+//           href: "/home/settings/security",
+//         },
+//         {
+//           title: "API Keys & Webhooks",
+//           description: "Manage your API access credentials",
+//           icon: <Key className="h-5 w-5" />,
+//           href: "/home/settings/api-keys",
+//         },
+//       ],
+//     },
+//     {
+//       title: "Team",
+//       items: [
+//         {
+//           title: "Team Members",
+//           description: "Manage team members and roles",
+//           icon: <Users className="h-5 w-5" />,
+//           href: "/home/settings/team",
+//         },
+//       ],
+//     },
+//   ];
+
+//   return (
+//     <div className="space-y-10">
+//       <div>
+//         <h1 className="text-2xl font-bold tracking-tight">Settings</h1>
+//         <p className="text-muted-foreground">
+//           Manage your account and application preferences
+//         </p>
+//       </div>
+
+//       {settingsGroups.map((group) => (
+//         <div key={group.title} className="space-y-4">
+//           <h2 className="text-lg font-semibold">{group.title}</h2>
+//           <div className="grid gap-6 md:grid-cols-2">
+//             {group.items.map((item) => (
+//               <Card
+//                 key={item.title}
+//                 className="hover:border-primary transition-colors"
+//               >
+//                 <Link href={item.href} className="p-6 block">
+//                   <div className="flex items-start gap-4">
+//                     <div className="p-2 bg-primary/10 rounded-lg text-primary">
+//                       {item.icon}
+//                     </div>
+//                     <div>
+//                       <h3 className="font-semibold">{item.title}</h3>
+//                       <p className="text-sm text-muted-foreground">
+//                         {item.description}
+//                       </p>
+//                     </div>
+//                   </div>
+//                 </Link>
+//               </Card>
+//             ))}
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }

@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { FiCheckCircle, FiClock, FiAlertCircle, FiXCircle } from "react-icons/fi"
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot"
-import { ref } from "process";
+
 
 const badgeVariants = cva(
   // "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -38,6 +38,8 @@ const badgeVariants = cva(
         pending: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800",
         failed: "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800",
         canceled: "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800",
+        live: "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800",
+        test: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800",
       },
     },
     compoundVariants: [
@@ -70,7 +72,17 @@ const badgeVariants = cva(
         variant: "status",
         status: "refunded",
          className: "[&>svg]:text-green-500 dark:[&>svg]:text-green-400",
-      }
+      },
+       {
+        variant: "status",
+        status: "live",
+         className: "[&>svg]:text-green-500 dark:[&>svg]:text-green-400",
+      },
+      {
+        variant: "status",
+        status: "test",
+        className: "[&>svg]:text-yellow-500 dark:[&>svg]:text-yellow-400",
+      },
     ],
     defaultVariants: {
       variant: "default",
@@ -84,7 +96,12 @@ const statusIcons = {
   failed: <FiAlertCircle size={14} />,
   canceled: <FiXCircle size={14} />,
   refunded: <FiXCircle size={14} />,
+  success: <FiCheckCircle size={14} />,
+  live: <FiCheckCircle size={14} />,
+  test: <FiClock size={14} />,
 }
+
+
 
 interface BadgeProps extends React.ComponentProps<"span">, VariantProps<typeof badgeVariants> {
   asChild?: boolean
