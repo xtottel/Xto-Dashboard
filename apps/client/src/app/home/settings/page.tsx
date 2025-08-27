@@ -6,7 +6,8 @@ import {
   Key, 
   Shield, 
   Users,
-  Wallet, 
+  Wallet,
+  FileChartPie, 
 
 } from "lucide-react";
 import Link from "next/link";
@@ -49,6 +50,12 @@ export default function SettingsPage() {
       description: "Manage team members and roles",
       icon: <Users className="h-5 w-5" />,
       href: "/home/settings/team",
+    },
+    {
+      title: "Reports & Logs",
+      description: "Access your data downloads and activity/error logs.",
+      icon: <FileChartPie className="h-5 w-5" />,
+      href: "/home/settings/reports",
     },
   ];
 

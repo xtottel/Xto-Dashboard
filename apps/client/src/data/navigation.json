@@ -26,12 +26,11 @@
       "url": "/home/customers"
     },
     {
-      "title": "Reports",
-      "url": "/home/reports",
+      "title": "Commerce",
+      "url": "/home/products",
       "items": [
-        { "title": "Audit Logs", "url": "/home/reports/audit" },
-        { "title": "Sales Reports", "url": "/home/reports/sales" },
-        { "title": "Settlement Reports", "url": "/home/reports/settlements" }
+        { "title": "Add Product", "url": "/home/products/add" },
+        { "title": "Product List", "url": "/home/products/list" }
       ]
     }
   ]

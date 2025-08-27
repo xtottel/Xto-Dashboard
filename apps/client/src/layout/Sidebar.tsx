@@ -46,6 +46,7 @@ import { useRouter } from "next/navigation";
 
 const sectionIcons = {
   Dashboard: PieChart,
+   Commerce: Store,
   Payments: CreditCard,
   Invoicing: ReceiptCent,
   PayLink: Link2,
