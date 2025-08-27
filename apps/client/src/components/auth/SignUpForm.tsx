@@ -24,7 +24,6 @@ const schema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(7, "Phone number is too short"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  businessType: z.enum(["starter", "registered"]),
   terms: z.boolean().refine((val) => val, {
     message: "You must agree to the terms",
   }),
@@ -53,7 +52,6 @@ export default function SignUpForm() {
       email: "",
       phone: "",
       password: "",
-      businessType: "starter",
       terms: false,
     },
   });
@@ -71,7 +69,6 @@ export default function SignUpForm() {
           phone: data.phone,
           password: data.password,
           businessName: data.businessName,
-          businessType: data.businessType,
         }),
       });
 
@@ -131,7 +128,7 @@ export default function SignUpForm() {
   }
 
   return (
-    <div className="flex flex-col flex-1 lg:w-1/2 w-full overflow-y-auto no-scrollbar py-8">
+    <div className="flex flex-col flex-1 lg:w-1/2 w-full overflow-y-auto md:no-scrollbar py-8">
       <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
         <div className="flex justify-center mb-8">
           <Image src="/xtopay.png" alt="Xtopay Logo" width={150} height={50} />
@@ -227,20 +224,6 @@ export default function SignUpForm() {
             )}
           </div>
 
-          {/* What type of business do you own? */}
-          <div>
-            <Label htmlFor="terms" className="text-sm font-medium mb-1">
-              Business Type
-            </Label>
-            <select
-              id="businessType"
-              {...register("businessType")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
-            >
-              <option value="starter">Starter Business</option>
-              <option value="registered">Registered Business</option>
-            </select>
-          </div>
 
           <div className="mt-5"></div>
 

@@ -21,17 +21,15 @@ export default function SettingsPage() {
     },
     {
       title: "Business Profile",
-      description: "Update your company details",
+      description: "Update your company details and compliance information",
       icon: <Building className="h-5 w-5" />,
       href: "/home/settings/business",
     },
-    //
-    // Settlement Accounts
     {
       title: "Settlement Accounts",
       description: "Setup or bank or mobile money accounts to receive all your payments",
       icon: <Wallet className="h-5 w-5" />,
-      href: "/home/payouts/accounts",
+      href: "/home/settings/payout/accounts",
     },
 
     {
@@ -40,12 +38,6 @@ export default function SettingsPage() {
       icon: <Shield className="h-5 w-5" />,
       href: "/home/settings/security",
     },
-    // {
-    //   title: "Compliance",
-    //   description: "Configure compliance and verification settings",
-    //   icon: <Shield className="h-5 w-5" />,
-    //   href: "/home/settings/compliance",
-    // },
     {
       title: "API Keys & Webhooks",
       description: "Manage your API access credentials",
