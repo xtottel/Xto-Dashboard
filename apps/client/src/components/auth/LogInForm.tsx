@@ -103,7 +103,7 @@ function LoginFormContent() {
     });
     setLoading(true);
     try {
-      const res = await fetch("https://onetime.sendexa.co/api/auth/login", {
+      const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,12 +139,6 @@ function LoginFormContent() {
       <div className="flex flex-col flex-1 lg:w-1/2 w-full">
         <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
           <div className="flex justify-center mb-8">
-            {/* <Image
-              src="https://cdn.sendexa.co/images/logo/exaweb.png"
-              alt="Sendexa Logo"
-              width={150}
-              height={50}
-            /> */}
             <Image
               src="/xtopay.png"
               alt="Xtopay Logo"

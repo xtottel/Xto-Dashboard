@@ -24,7 +24,7 @@ function VerifyEmailContent() {
 
       try {
         const res = await fetch(
-          "https://onetime.sendexa.co/api/auth/verify-email",
+          "/api/auth/verify-email",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

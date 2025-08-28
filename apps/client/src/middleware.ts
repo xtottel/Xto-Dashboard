@@ -1,8 +1,8 @@
-
+//mechant/src/middleware.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// const protectedRoutes = ["/apps/home", "/home", "/settings/profile"];
+ const protectedRoutes = ["/apps/home", "/home", "/settings/profile"];
 const authRoutes = ["/login", "/signup", "/forgot-password"];
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const publicRoutes = ["/", "/verify-email", "/reset-password", "/resend-verification"];
@@ -21,12 +21,12 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // const isProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route));
+ const isProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route));
   const isAuthRoute = authRoutes.includes(pathname);
 
   console.log("📊 Route analysis:", {
     pathname,
-    // isProtectedRoute,
+   isProtectedRoute,
     isAuthRoute
   });
 
@@ -35,20 +35,20 @@ export async function middleware(request: NextRequest) {
   console.log("🍪 Token from cookies:", token ? "Present" : "Missing");
 
   // ✅ For protected routes, verify with backend
-  // if (isProtectedRoute) {
-  //   console.log("🛡️ Protected route detected, verifying auth...");
-  //   const isAuthenticated = await verifyAuth(token);
-  //   console.log("🔐 Auth verification result:", isAuthenticated);
+  if (isProtectedRoute) {
+    console.log("🛡️ Protected route detected, verifying auth...");
+    const isAuthenticated = await verifyAuth(token);
+    console.log("🔐 Auth verification result:", isAuthenticated);
     
-  //   if (!isAuthenticated) {
-  //     console.log("❌ Not authenticated, redirecting to login");
-  //     const loginUrl = new URL("/login", request.url);
-  //     loginUrl.searchParams.set("from", pathname);
-  //     return NextResponse.redirect(loginUrl);
-  //   } else {
-  //     console.log("✅ Authenticated, allowing access to:", pathname);
-  //   }
-  // }
+    if (!isAuthenticated) {
+      console.log("❌ Not authenticated, redirecting to login");
+      const loginUrl = new URL("/login", request.url);
+      loginUrl.searchParams.set("from", pathname);
+      return NextResponse.redirect(loginUrl);
+    } else {
+      console.log("✅ Authenticated, allowing access to:", pathname);
+    }
+  }
 
   // ✅ Prevent logged-in users from visiting login/signup
   if (isAuthRoute && token) {
@@ -77,7 +77,7 @@ async function verifyAuth(token: string | undefined): Promise<boolean> {
 
   try {
     console.log("🔐 Verifying token with backend...");
-    const verifyRes = await fetch("https://onetime.sendexa.co/api/auth/verify", {
+    const verifyRes = await fetch("/api/auth/verify", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
