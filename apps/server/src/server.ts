@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { authRoutes } from '@/routes/auth';
-//import { userRoutes } from '@/routes/user';
+import { userRoutes } from '@/routes/user';
 import { logger } from '@/utils/logger';
 import 'dotenv/config';
  
@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 
 // Routes - temporarily commented out
 app.use('/api/auth', authRoutes);
-// app.use('/api/user', userRoutes);
+ app.use('/api/user', userRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

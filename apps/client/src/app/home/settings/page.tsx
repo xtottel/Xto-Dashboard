@@ -4,7 +4,7 @@ import {
   User, 
   Building, 
   Key, 
-  Shield, 
+  // Shield, 
   Users,
   Wallet,
   FileChartPie, 
@@ -33,12 +33,12 @@ export default function SettingsPage() {
       href: "/home/settings/payout/accounts",
     },
 
-    {
-      title: "Security",
-      description: "Configure authentication and security settings",
-      icon: <Shield className="h-5 w-5" />,
-      href: "/home/settings/security",
-    },
+    // {
+    //   title: "Security",
+    //   description: "Configure authentication and security settings",
+    //   icon: <Shield className="h-5 w-5" />,
+    //   href: "/home/settings/security",
+    // },
     {
       title: "API Keys & Webhooks",
       description: "Manage your API access credentials",

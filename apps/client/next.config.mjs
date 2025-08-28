@@ -20,8 +20,8 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        // destination: "https://onetime.sendexa.co/api/:path*",
-        destination: "http://localhost:2806/api/:path*",
+        destination: "https://onetime.xtopay.co/api/:path*",
+        // destination: "http://localhost:2806/api/:path*",
       },
     ];
   },

@@ -46,38 +46,44 @@ function LoginFormContent() {
     },
   });
 
-  // ✅ Handle login success
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleSuccessfulLogin = (result: any) => {
-    console.log("✅ Login successful! Result:", result);
 
-    if (result.token) {
-      // Save token to localStorage
-      localStorage.setItem("bearerToken", result.token);
+  // Updated LoginForm.tsx token handling part
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleSuccessfulLogin = (result: any) => {
+  console.log("✅ Login successful! Result:", result);
 
-      // Set token expiry (assuming 1 hour expiry - adjust based on your JWT expiry)
-      const expiryTime = Date.now() + 60 * 60 * 1000; // 1 hour
-      localStorage.setItem("tokenExpiry", expiryTime.toString());
+  if (result.accessToken) {
+    // Save access token to localStorage and cookies
+    localStorage.setItem("bearerToken", result.accessToken);
+    
+    // Set token expiry (1 hour from JWT)
+    const expiryTime = Date.now() + 60 * 60 * 1000;
+    localStorage.setItem("tokenExpiry", expiryTime.toString());
 
-      // Also set a cookie for middleware compatibility
-      document.cookie = `token=${result.token}; path=/; max-age=${60 * 60}; secure=${process.env.NODE_ENV === "production"}; sameSite=lax`;
-      console.log("✅ Token saved to cookie and localStorage");
-    }
+    // Set cookies for middleware compatibility
+    document.cookie = `token=${result.accessToken}; path=/; max-age=${60 * 60}; secure=${process.env.NODE_ENV === "production"}; sameSite=lax`;
+    document.cookie = `sessionToken=${result.accessToken}; path=/; max-age=${60 * 60}; secure=${process.env.NODE_ENV === "production"}; sameSite=lax`;
+    
+    console.log("✅ Access token saved to cookies and localStorage");
+  }
 
-    if (result.user) {
-      localStorage.setItem("user", JSON.stringify(result.user));
-      console.log("✅ User data saved:", result.user);
-    }
+  if (result.user) {
+    localStorage.setItem("user", JSON.stringify(result.user));
+    console.log("✅ User data saved:", result.user);
+  }
 
-    toast.success(result.message || "Login successful!");
+  toast.success(result.message || "Login successful!");
 
-    // Set redirecting state and use router after a short delay
-    setIsRedirecting(true);
-    console.log("🚀 Redirecting to:", redirectTo);
-    setTimeout(() => {
-      router.push(redirectTo);
-    }, 1000);
-  };
+  // Set redirecting state and use router after a short delay
+  setIsRedirecting(true);
+  console.log("🚀 Redirecting to:", redirectTo);
+  setTimeout(() => {
+    router.push(redirectTo);
+  }, 1000);
+};
+
+
+
 
   // ✅ Handle login errors
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

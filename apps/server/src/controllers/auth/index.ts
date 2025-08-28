@@ -1,4 +1,4 @@
-//controllers/auth/index.ts
+// controllers/auth/index.ts
 import { login } from "./login.controller";
 import { otp } from "./otp.controller";
 import { signup } from "./signup.controller";
@@ -7,7 +7,7 @@ import { forgotPassword } from "./forgetPassword.controller";
 import { resetPassword } from "./resetPassword.controller";
 import { resendVerification } from "./resendVerification.controller";
 import { refresh } from "./refresh.controller";
-import { logout } from "./logout.controller";
+import { logout, logoutAllSessions, logoutSession } from "./logout.controller";
 import { verify } from "./tokenVerify.controller";
 
 export const authController = {
@@ -20,5 +20,7 @@ export const authController = {
   resendVerification,
   refresh,
   logout,
+  logoutAllSessions,
+  logoutSession,
   verify,
 };

@@ -1,5 +1,8 @@
+
+// routes/auth.routes.ts
 import { Router } from 'express';
 import { authController } from '@/controllers/auth';
+import { authenticateToken } from '@/middleware/auth';
 
 const router = Router();
 
@@ -30,7 +33,13 @@ router.get('/refresh', authController.refresh);
 // Verify token route
 router.get('/verify', authController.verify);
 
-// Logout route
-router.post('/logout', authController.logout);
+// Logout route (requires authentication)
+router.post('/logout', authenticateToken, authController.logout);
+
+// Logout all sessions route
+router.post('/logout-all', authenticateToken, authController.logoutAllSessions);
+
+// Logout specific session route
+router.delete('/sessions/:sessionId', authenticateToken, authController.logoutSession);
 
 export { router as authRoutes };

@@ -7,7 +7,14 @@ import { VerificationEmail } from "@/emails/VerificationEmail";
 import crypto from 'crypto';
 import { validatePasswordStrength } from '@/utils/security';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
+// Configure Prisma with increased timeout
+const prisma = new PrismaClient({
+  transactionOptions: {
+    maxWait: 30000,
+    timeout: 30000,
+  },
+});
 
 export const signup = async (req: Request, res: Response) => {
   try {
